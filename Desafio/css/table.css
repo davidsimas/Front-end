@@ -1,0 +1,21 @@
+#funcionário {
+    width: 80%;
+    margin: auto;
+    border: 2px solid #fff;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#funcionário thead {
+    background: yellowgreen;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+#funcionário thead tr th {
+    padding: 6px 10px;
+}
+
+#funcionário tbody tr th {
+    padding: 6px 10px;
+}

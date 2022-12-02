@@ -1,0 +1,29 @@
+form {
+    text-align: center;
+    width: 400px;
+    margin: 20px auto;
+}
+
+.campos {
+    width: 200px;
+    height: 20px;
+    border: 2px solid yellow;
+    border-radius: 10px;
+}
+
+.botoes_salvar {
+    text-transform: uppercase;
+    font-size: 20px;
+    border: none;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.botoes_salvar:hover {
+    cursor: pointer;
+    color: #fff;
+    background: green;
+}
