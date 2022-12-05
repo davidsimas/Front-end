@@ -11,70 +11,60 @@
 <body>
 
     <header>
-        <div id="logo">
-            <a href="index.html">
-                <img src="imagens/logo.jpg" alt="">
-            </a>
+        <div class="logo">
+            <a href="index.html"><img src="imagens/logo.jpg" alt="Logotipo"></a>
         </div>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="cadastrar.html">Cadastrar</a></li>
-            <li><a href="editar.html">Editar</a></li>
-        </ul>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="cadastrar.html">Cadastrar</a></li>
+                <li><a href="editar.html">Editar</a></li>
+            </ul>        
     </header>
     
     <main>
-        <h1>Listar Funcionário</h1>
-        <hr>
-        <table id="funcionário">
-            <thead>
+
+        <h1>Lista Alunos</h1>
+
+        <table id="alunos">
+  
+            <thead>  
                 <tr>
                     <th>Id</th>
                     <th>Nome</th>
-                    <th>Cargo<th>
-                    <th>Salário</th>
+                    <th>CPF</th>
+                    <th>Idade</th>
                     <th></th>
-
                 </tr>
-
             </thead>
-
             <tbody>
                 <tr>
-                    <th>1</th>
-                    <th>Lirinha</th>
-                    <th>Aluno</th>
-                    <th>1900,00</th>
-                    <th>
+                    <td>1</td>
+                    <td>David Simas</td>
+                    <td>111.444.777-35</td>
+                    <td>41</td>
+                    <td>
                         <a href="editar.html">editar</a>
-                    </th>
-                </tr>
-                <tr>
-                    <th>2</th>
-                    <th>João de Deus</th>
-                    <th>Junior</th>
-                    <th>1900,00</th>
-                    <th>
-                        <a href="editar.html">editar</a>
-                    </th>
-                </tr>
-                <tr>
-                    <th>3</th>
-                    <th>Felipi Weiss</th>
-                    <th>Junior</th>
-                    <th>1900,00</th>
-                    <th>
-                        <a href="editar.html">editar</a>
-                    </th>
-                </tr>
+                    </td>
+                </tr>                                
             </tbody>
-
         </table>
+
     </main>
 
     <footer>
-        <span>Desenvolvido Turma Python</span>
+        
+        <ul class="social_icon">
+            <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+        </ul>
+        <p>2022 David Simas | All Rights Reserved</p>
     </footer>
+
+    <script src="js/listar.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     
 </body>
 </html>

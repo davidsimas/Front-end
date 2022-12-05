@@ -1,21 +1,26 @@
-#funcionário {
+#alunos {
     width: 80%;
     margin: auto;
-    border: 2px solid #fff;
+    border: 1px solid #e7e418;
     border-collapse: collapse;
     text-align: center;
 }
 
-#funcionário thead {
-    background: yellowgreen;
+#alunos thead {
+    background: #e7e418;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 1.2em;
 }
 
-#funcionário thead tr th {
+#alunos thead tr th {
     padding: 6px 10px;
 }
 
-#funcionário tbody tr th {
-    padding: 6px 10px;
+#alunos tbody {
+    background: #faf8ce;
+}
+
+#alunos tbody tr td {
+    padding: 8px 10px;
+    border: 1px solid #000000;
 }

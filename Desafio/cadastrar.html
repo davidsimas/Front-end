@@ -4,54 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Funcionário</title>
+    <title>Cadastrar</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
-    
-<header>
-    <div id="logo">
-        <a href="index.html">
-            <img src="imagens/logo.jpg" alt="">
-        </a>
-    </div>
-    <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="listar.html">Listar</a></li>
-        <li><a href="editar.html">Editar</a></li>
-    </ul>
-</header>
 
-<main>
-    <h1>Cadastrar Funcionário</h1>
-    <form action="">
-        <div>
-            <input type="text" class="campos" id="id" placeholder="ID">
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="imagens/logo.jpg" alt="Logotipo"></a>
         </div>
-        <br>
-        <div>
-            <input type="text" class="campos" id="nome" placeholder="Nome">
-        </div>
-        <br>
-        <div>
-            <input type="text" class="campos" id="cargo" placeholder="Cargo">
-        </div>
-        <br>
-        <div>
-            <input type="text" class="campos" id="salario" placeholder="Salário">
-        </div>
-        <br>
-        <div>
-            <input class="botoes_salvar" type="submit" value="Salvar">
-            <button class="botoes_salvar">Limpar</button>
-        </div>
-    </form>
-</main>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="listar.html">Listar</a></li>
+                <li><a href="editar.html">Editar</a></li>
+            </ul>        
+    </header>
+
+    <main>
+
+        <h1>Cadastro Alunos</h1>
+
+        <form action="">
+            <div>
+                <input type="text" class="campos" name="nome" placeholder="Nome">
+            </div>
+            <br>
+            <div>
+                <input type="text" class="campos" name="cpf" placeholder="CPF">
+            </div>
+            <br>
+            <div>
+                <input type="text" class="campos" name="idade" placeholder="Idade">
+            </div>
+            <br>
+            <div>
+                <input class="botoes salvar" id="salvar" type="submit" value="Salvar">
+                <button class= "botoes cancelar" onclick="limpar(event)">Limpar</button>
+            </div>
+        </form>
+        
+    </main>
 
 <footer>
-    <span>Desenvolvido Turma Python</span>
+        
+    <ul class="social_icon">
+        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+    </ul>
+    <p>2022 David Simas | All Rights Reserved</p>
 </footer>
+
+<script src="js/script.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 </html>
