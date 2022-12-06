@@ -1,16 +1,10 @@
-var elemento = document.querySelector('h1');
-
-/*elemento.innerHTML += ' JS';
-elemento.style.color = '#00f';
-console.log(elemento);*/
-function limpar(event){
-
+function limpar(event) {
     event.preventDefault();
     document.querySelector('form').reset();
     console.log('Limpando...');
 }
 
-function salvar(event){
+function salvar(event) {
     console.log('Salvando...');
     event.preventDefault();
 
@@ -40,10 +34,9 @@ function salvar(event){
 
     listaAlunos.push(Aluno);
 
-
     localStorage.setItem('IdAluno', JSON.stringify(id));
     localStorage.setItem('Alunos', JSON.stringify(listaAlunos));
-    limpar(event)
+    limpar(event);
 }
 
 document.getElementById('salvar').addEventListener('click', salvar)
