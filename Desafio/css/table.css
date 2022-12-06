@@ -24,3 +24,15 @@
     padding: 8px 10px;
     border: 1px solid #000000;
 }
+
+#btn_deletar {
+    background: red;
+    color: #ffffff;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+#btn_deletar:hover {
+    background: greenyellow;
+    color: #000000;
+}

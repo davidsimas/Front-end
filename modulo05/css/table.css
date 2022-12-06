@@ -18,3 +18,12 @@
 #alunos tbody tr th{
     padding: 8px 10px;
 }
+
+#btn_deletar {
+    background: red;
+    font-size: 1.2em;
+}
+
+#btn_deletar:hover {
+    background: greenyellow;
+}
