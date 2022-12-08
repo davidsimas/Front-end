@@ -21,43 +21,38 @@ function editar(event) {
         'id': id,
         'nome': name,
         'cpf': doc_people,
-        'idade': year
-    };
+        'idade': year};
 
     var lista = carregalocalstorage();
     var novaLista = [];
 
     lista.forEach(e => {
-        if(e['id'] != id){
+        if(e['id'] != id) {
             novaLista.push(e);
-        }
-        else{
+        } else {
             novaLista.push(Aluno);
-        }
-    
+        }    
     });
 
     localStorage.setItem('Alunos', JSON.stringify(novaLista));
     alert('Editado com Sucesso...')
-      
 }
 
-function carregaCampos(dado){
-    document.getElementsByName('id')[0].value = dado['id']
-    document.getElementsByName('nome')[0].value = dado['nome']
-    document.getElementsByName('cpf')[0].value = dado['cpf']
-    document.getElementsByName('idade')[0].value = dado['idade']
-};
+function carregaCampos(dado) {
+    document.getElementsByName('id')[0].value = dado['id'];
+    document.getElementsByName('nome')[0].value = dado['nome'];
+    document.getElementsByName('cpf')[0].value = dado['cpf'];
+    document.getElementsByName('idade')[0].value = dado['idade'];
+}
 
 function carregadados() {
+
     var urlParametros = new URLSearchParams(window.location.search);
-
     var id = parseInt(urlParametros.get('id'));
-
     var alunos = JSON.parse(localStorage.getItem('Alunos'));
     
-    alunos.forEach(e =>{
-        if(e['id'] == id){
+    alunos.forEach(e => {
+        if(e['id'] == id) {
             carregaCampos(e);
         }
     });
