@@ -19,4 +19,4 @@ def inicio():
 def novo():
     return "Titulo Rota Nova1"
 
-app.run()
+app.run(debug=True)
