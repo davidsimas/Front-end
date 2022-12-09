@@ -1,0 +1,21 @@
+body {
+    background: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background: #000;
+}
+
+.btn {
+    width: 100px;
+    margin: 15px;
+    box-shadow: 5px 5px 10px #10a41f;
+}
+
+footer {
+    height: 200px;
+}
