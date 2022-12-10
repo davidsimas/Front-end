@@ -8,6 +8,7 @@ header {
     align-items: center;
     height: 100px;
     background: #fff;
+
 }
 
 .btn {
@@ -20,6 +21,10 @@ main {
     display: flex;
     align-items: center;
     height: 100%;
+}
+
+main h1 {
+    text-shadow: 5px 5px 10px #10a41f;;
 }
 
 
