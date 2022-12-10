@@ -1,5 +1,5 @@
-{%extends "template.html" %}
-{%block conteudo%}
+{% extends "template.html" %}
+{% block conteudo %}
         
         <table class="table table-hover">
             <thead>
@@ -10,11 +10,11 @@
             </tr>
             </thead>
             <tbody>
-                {% for pessoa in  pessoas%}
+                {% for pessoa in pessoas %}
                     <tr>
-                        <td>{{pessoa.nome}}</td>
-                        <td>{{pessoa.idade}}</td>
-                        <td>{{pessoa.altura}}</td>
+                        <td>{{ pessoa.nome }}</td>
+                        <td>{{ pessoa.idade }}</td>
+                        <td>{{ pessoa.altura }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -22,4 +22,4 @@
         </table>
     </div>
 
-{%endblock%}
+{% endblock %}

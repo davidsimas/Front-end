@@ -7,14 +7,13 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Moredevs</title>
+        <title>{{ titulo }}</title>
 
-    
     </head>
 
     <body>
 
-        <header>
+        <header class="shadow-lg p-3 mb-5 bg-white rounded">
             <ul class="nav justify-content-center">
                 <li class="nav-item">
                     <a class="btn btn-outline-success" href="/">Lista</a>
@@ -25,16 +24,20 @@
               </ul>
         </header>
 
-        <div class="container">
-            <div class="page-header">
-                <h1>{{ titulo }}</h1>
-            </div>
-            
-            {%block conteudo%} {%endblock%}
+        <main class="border">
+
+            <div class="container">
+                <div class="page-header">
+                    <h1>{{ titulo }}</h1>
+                </div>
+                
+                {% block conteudo %} {% endblock %}
+
+        </main>
 
         <footer>
 
-            <div class="card text-center">
+            <div class="card text-center border-0">
                 <div class="card-body">
                     <h5 class="card-title">+Devs2Blu</h5>
                     <p class="card-text">Desenvolvimento em aulas Python e Flask.</p>
