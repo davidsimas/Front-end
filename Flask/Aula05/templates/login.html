@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ titulo }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/login.css') }}">
+</head>
+<body>
+    <section>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+            <div class="square" style="--i:0;"></div>
+            <div class="square" style="--i:1;"></div>
+            <div class="square" style="--i:2;"></div>
+            <div class="square" style="--i:3;"></div>
+            <div class="square" style="--i:4;"></div>
+            <div class="container">
+                <div class="form">
+                    <h2>{{ titulo }}</h2>
+
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                       <ul id="messages" class="list-unstyled">
+                       {% for message in messages %}
+                           <li class="alert alert-success">{{ message }}</li>
+                       {% endfor %}
+                       </ul>
+                    {% endif %}
+                    {% endwith %}
+
+                    <form action="/autenticar" method="post">
+                        <div class="inputBox">
+                            <input type="text" name="usuario" placeholder="Username" required>
+                        </div>
+                        <div class="inputBox">
+                            <input type="password" name="senha" placeholder="Password" required>
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" value="Login">
+                        </div>
+                        <p class="forget">Esqueceu a senha?
+                        <a href="#">Clique aqui</a></p>
+                        <p class="forget">Não tem uma conta?
+                        <a href="#">Inscrição</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>    
+</body>
+</html>
