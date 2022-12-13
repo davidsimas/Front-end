@@ -5,7 +5,7 @@ pessoa1 = Pessoa('haiko', '15', '1:50')
 pessoa2 = Pessoa('Jean', '42', '1:84')
 pessoa3 = Pessoa('Gisele', '16', '1:56')
 
-lista = [pessoa1 , pessoa2, pessoa3]
+lista = [pessoa1, pessoa2, pessoa3]
 
 app = Flask(__name__)
 
