@@ -7,19 +7,6 @@ pessoa3 = Pessoa('Gisele', '16', '1:56')
 
 lista = [pessoa1 , pessoa2, pessoa3]
 
-usuario1 = Usuario('andre', 'vitor', 'moredevs')
-usuario2 = Usuario('felipe', 'weiss', '123456')
-usuario3 = Usuario('larissa', 'sebold', '654321')
-
-usuarios = {
-    usuario1.nickname: usuario1,
-    usuario2.nickname: usuario2,
-    usuario3.nickname: usuario3
-}
-
-
-
-
 app = Flask(__name__)
 
 app.secret_key = "moredevs"
@@ -53,7 +40,7 @@ def criar():
 
     lista.append(pessoas)
 
-    return redirect("/")
+    return redirect("/listar")
 
 
 @app.route("/autenticar", methods=["POST"])
