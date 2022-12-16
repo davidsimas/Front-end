@@ -5,6 +5,7 @@ from models import Jogos, Usuarios
 
 @app.route('/')
 def index():
+
     lista = Jogos.query.order_by(Jogos.id)
     return render_template("lista.html", titulo = 'jogos', jogos = lista)
 
@@ -43,6 +44,7 @@ def criar():
 
 @app.route('/editar/<int:id>')
 def editar(id):
+
     if 'usuario_logado' not in session or session['usuario_logado'] is None:
         return redirect(url_for('login', proximo= url_for('editar')))
     #fazer uma query do banco
@@ -51,9 +53,27 @@ def editar(id):
 
 @app.route('/atualizar', methods=['POST',])
 def atualizar():
-    pass
+    
+    jogo = Jogos.query.filter_by(id=request.form['id']).first()
+    
+    jogo.nome = request.form['nome']
+    jogo.categoria = request.form['categoria']
+    jogo.console = request.form['console']
+
+    db.session.add(jogo)
+    db.session.commit()
+    return redirect(url_for('index'))
 
 
+@app.route('/deletar/<int:id>')
+def deletar(id):
+    if 'usuario_logado' not in session or session['usuario_logado'] is None:
+        return redirect(url_for('login'))
+
+    Jogos.query.filter_by(id=id).delete()
+    db.session.commit()
+    flash('Jogo Deletado com sucesso')
+    return redirect(url_for('index'))
 
 @app.route('/logout')
 def logout():
@@ -61,6 +81,7 @@ def logout():
     flash('voce foi Desconectado')
 
     return redirect(url_for('login'))
+
 
 @app.route('/login')
 def login():

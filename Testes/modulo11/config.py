@@ -1,3 +1,5 @@
+
+
 # encriptar o passwords do usuário
 SECRET_KEY = 'moredevs'
 
