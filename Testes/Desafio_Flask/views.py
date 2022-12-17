@@ -8,7 +8,7 @@ from model.usuarios import Usuarios
 def index():
     lista = Pessoas.query.order_by(Pessoas.id)
 
-    return render_template("lista.html", titulo = "Pessoas", pessoa = lista)
+    return render_template("index.html", titulo = "Pessoas", pessoas = lista)
 
 
 @app.route("/novo")

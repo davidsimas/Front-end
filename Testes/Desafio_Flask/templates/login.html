@@ -30,7 +30,10 @@
                     {% endif %}
                     {% endwith %}
 
-                    <form action="/autenticar" method="post">
+                    <form action="{{ url_for('autenticar') }}" method="post">
+                        
+                        <input type="hidden" name="proximo" value="{{ proximo or url_for('index') }}">
+
                         <div class="inputBox">
                             <input type="text" name="usuario" placeholder="Username" required>
                         </div>
