@@ -5,21 +5,21 @@
 
       <fieldset>
 
-        <input type="hidden" name="id" value="{{ jogo.id }}">
+        <input type="hidden" name="id" value="{{ pessoas.id }}">
 
         <div class="form-group">
           <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" class="form-control" value="{{ jogo.nome }}">
+          <input type="text" id="nome" name="nome" class="form-control" value="{{ pessoas.nome }}">
         </div>
 
         <div class="form-group">
-          <label for="categoria">Categoria</label>
-          <input type="text" id="categoria" name="categoria" class="form-control" value="{{ jogo.categoria }}">
+          <label for="categoria">Idade</label>
+          <input type="text" id="categoria" name="idade" class="form-control" value="{{ pessoas.idade }}">
         </div>
 
         <div class="form-group">
-          <label for="console">Console</label>
-          <input type="text" id="console" name="console" class="form-control" value="{{ jogo.console }}">
+          <label for="console">Altura</label>
+          <input type="text" id="console" name="altura" class="form-control" value="{{ pessoas.altura }}">
         </div>
 
         <button type="submit" class="btn btn-success">Salvar</button>

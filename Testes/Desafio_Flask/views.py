@@ -6,9 +6,9 @@ from model.usuarios import Usuarios
 
 @app.route("/")
 def index():
-    lista = Pessoas.query.order_by(Pessoas.id)
+    pessoa = Pessoas.query.order_by(Pessoas.id)
 
-    return render_template("index.html", titulo = "Pessoas", pessoas = lista)
+    return render_template("listar.html", titulo = "Pessoas", pessoas = pessoa)
 
 
 @app.route("/novo")
@@ -25,20 +25,16 @@ def criar():
     idade = request.form["idade"]
     altura = request.form["altura"]
 
-    # Variável nova recebendo classe Pessoas e filtrando pelo nome
     pessoa = Pessoas.query.filter_by(nome = nome).first()
-    # if condicional recebendo a variável caso exista pessoas cadastradas 
     if pessoa:
         flash("Pessoa já cadastrada.")
+
         return redirect(url_for("index"))
 
-    # Variável criada recebendo variaveis e as variaveis refente ao form
     nova_pessoa = Pessoas(nome = nome, idade = idade, altura = altura)
-    # Acessando variável db e o recurso session e adicionando dados a variável nova_pessoa
     db.session.add(nova_pessoa)
-    # Acessando variável db e o recurso session e comitando dados no banco
     db.session.commit()
-    # Redirecionamento para lista de pessoas
+
     return redirect(url_for("index"))
 
 
@@ -49,12 +45,32 @@ def editar(id):
     # Fazer uma query do banco
     pessoa = Pessoas.query.filter_by(id = id).first()
 
-    return render_template("editar.html", titulo = "Editar Pessoa", pessoa = pessoa)
+    return render_template("editar.html", titulo = "Editar Pessoa", pessoas = pessoa)
 
 
 @app.route("/atualizar", methods = ["POST"])
 def atualizar():
-    pass
+    pessoa = Pessoas.query.filter_by(id = request.form["id"]).first()
+    pessoa.nome = request.form["nome"]
+    pessoa.idade = request.form["idade"]
+    pessoa.altura = request.form["altura"]
+
+    db.session.add(pessoa)
+    db.session.commit()
+
+    return redirect(url_for("index"))
+
+
+@app.route("/deletar/<int:id>")
+def deletar(id):
+    if "usuario_logado" not in session or session["usuario_logado"] is None:
+        return redirect(url_for("login", proximo = url_for("editar")))
+    
+    Pessoas.query.filter_by(id = id).delete()
+    db.session.commit()
+    flash("Pessoa deletada com sucesso.")
+
+    return redirect(url_for("index"))
 
 
 @app.route("/logout")
@@ -75,18 +91,15 @@ def login():
 @app.route("/autenticar", methods = ["POST"])
 def autenticar():
     usuario = Usuarios.query.filter_by(nickname = request.form["usuario"]).first()
-    
     if usuario:
         if request.form["senha"] == usuario.senha:
 
             session["usuario_logado"] = usuario.nickname            
-            flash(usuario.nickname + "Logado com sucesso")
+            flash(usuario.nickname + " Logado com sucesso")
             proxima_pagina = request.form["proximo"]
 
             return redirect(proxima_pagina)
-
     else:
         flash("Usuário ou senha incorretos tente novamente.")
-        #dinamizando url
 
         return redirect(url_for("login"))

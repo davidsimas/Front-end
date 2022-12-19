@@ -10,15 +10,14 @@ def index():
     return render_template("lista.html", titulo = 'jogos', jogos = lista)
 
 
-
-
 @app.route('/novo')
 def novo():
     if 'usuario_logado' not in session or session['usuario_logado'] is None:
-        return redirect(url_for('login', proximo= url_for('novo')))
+        return redirect(url_for('login', proximo = url_for('novo')))
     return render_template('novo.html', titulo='criar Jogo')
 
-@app.route('/criar', methods=['POST',])
+
+@app.route('/criar', methods = ['POST',])
 def criar():
     nome = request.form['nome']
     categoria = request.form['categoria']
@@ -41,7 +40,6 @@ def criar():
     return redirect(url_for('index'))
 
 
-
 @app.route('/editar/<int:id>')
 def editar(id):
 
@@ -50,6 +48,7 @@ def editar(id):
     #fazer uma query do banco
     jogo = Jogos.query.filter_by(id=id).first()
     return render_template('editar.html', titulo= 'Editar Jogo', jogo = jogo)
+
 
 @app.route('/atualizar', methods=['POST',])
 def atualizar():
@@ -75,6 +74,7 @@ def deletar(id):
     flash('Jogo Deletado com sucesso')
     return redirect(url_for('index'))
 
+
 @app.route('/logout')
 def logout():
     session['usuario_logado'] = None
@@ -89,6 +89,7 @@ def login():
         proximo = request.args.get('proximo')
 
         return render_template('login.html', proximo=proximo)
+
 
 @app.route('/autenticar', methods=['POST',])
 def autenticar():

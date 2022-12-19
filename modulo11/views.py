@@ -18,14 +18,14 @@ def novo():
         return redirect(url_for('login', proximo= url_for('novo')))
     return render_template('novo.html', titulo='criar Jogo')
 
-@app.route('/criar', methods=['POST',])
+@app.route('/criar', methods = ['POST',])
 def criar():
     nome = request.form['nome']
     categoria = request.form['categoria']
     console = request.form['console']
 
     #variavel nova recebendo classe jogo e filtrando pelo nome
-    jogo = Jogos.query.filter_by(nome=nome).first()
+    jogo = Jogos.query.filter_by(nome = nome).first()
     # if condicional recebendo a variavel caso exista jogos cadastrados 
     if jogo:
         flash('Jogo Ja Existente!')

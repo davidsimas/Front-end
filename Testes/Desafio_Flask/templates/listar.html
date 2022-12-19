@@ -17,8 +17,8 @@
                         <td>{{ pessoa.altura }}</td>
 
                         <td>
-                            <a href="{{ url_for('editar', id=jogo.id ) }}">Editar</a>|
-                            <a href="{{ url_for('deletar', id=jogo.id ) }}">deletar</a>
+                            <a href="{{ url_for('editar', id=pessoa.id ) }}">Editar</a> |
+                            <a href="{{ url_for('deletar', id=pessoa.id ) }}">deletar</a>
                         </td>
                     </tr>
                 {% endfor %}
